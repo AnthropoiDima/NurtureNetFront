@@ -8,6 +8,7 @@ import { DadiljaService } from './Services/dadilja.service';
 import { DadiljaUpdateComponent } from './Components/dadilja-update/dadilja-update.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { OglasComponent } from './Components/oglas/oglas.component';
@@ -35,6 +36,7 @@ import { ChatComponent } from './Components/chat/chat.component';
     HttpClientModule,
     MatIconModule,
     MatFormFieldModule,
+    MatInputModule,
     FormsModule,
     MatRadioModule
   ],

@@ -6,4 +6,5 @@ export interface Oglas
     radnoVreme: string;
     vestine: string;
     jeDadilja?: boolean;
+    oglasivac: string;
 }

@@ -1,12 +1,15 @@
 <form class="forma">
-    <mat-form-field>
+    <form>
         Opis:<input matInput ="opis" [(ngModel)]="opis" name="opis">
+        <br><br>
         Plata:<input matInput ="plata" [(ngModel)]="plata" name="plata">
+        <br><br>
         Radno vreme:<input matInput ="radnoVreme" [(ngModel)]="radnoVreme" name="radnoVreme">
+        <br><br>
         Vestine:<input matInput ="vestine" [(ngModel)]="vestine" name="vestine">
-    </mat-form-field>
+    </form>
     <br>
-    <button type="button" style="background-color: pink;" mat-raised-button routerLink="/oglasi" (click)="dodajOglas()">Dodaj novi oglas</button>
+    <button type="button" style="background-color: pink;" routerLink="/oglasi" mat-raised-button (click)="dodajOglas()">Dodaj novi oglas</button>
     <br><br>
     <button type="button" mat-raised-button routerLink="/oglasi" >Nazad na oglase</button>
 </form>

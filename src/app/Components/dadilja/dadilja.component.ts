@@ -1,8 +1,10 @@
 import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Dadilja } from 'src/app/Models/dadilja';
+import { Korisnik } from 'src/app/Models/korisnik';
 import { Oglas } from 'src/app/Models/oglas';
 import { DadiljaService } from 'src/app/Services/dadilja.service';
+import { environment } from 'src/environments';
 
 @Component({
   selector: 'app-dadilja',
@@ -10,13 +12,18 @@ import { DadiljaService } from 'src/app/Services/dadilja.service';
   styleUrls: ['./dadilja.component.css']
 })
 export class DadiljaComponent {
+  userEmail: string = ""
+  isDadilja:boolean = true
   dadilja$: Observable<Dadilja[]> = of([]);
-  dadilja: Dadilja | null = null;
+  korisnik$: Observable<Korisnik[]> = of([]);
+  
   dadilje: Dadilja[] | null = null;
+  korisnik: Korisnik[] | null = null;
+
   dadilje$: Observable<Dadilja[]> = of([]);
   ime: string = "";
   prezime: string = "";
-  email: string = "ema@gmail.com";
+  email: string = "";
   password: string = "";
   grad: string = "";
   drzava: string = "";
@@ -31,20 +38,41 @@ export class DadiljaComponent {
   constructor(private dadiljaService: DadiljaService, private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void { 
-    this.dadilja$ = this.dadiljaService.preuzmiDadiljuPoEmailu("ema@gmail.com")
-    this.dadilja$.subscribe(dadilja => {
-      this.dadilje = dadilja
-      console.log(this.dadilja)
-    })
-    // this.dadilja$.subscribe(dadilja => {
-    //   this.dadilja = dadilja;
-    //   console.log(this.dadilja);
-    // })
+    this.userEmail = environment.userEmail
+    this.isDadilja = environment.isDadilja
+    console.log("user: ", this.userEmail, " isDadilja: ", this.isDadilja)
 
-    this.dadilje$ = this.dadiljaService.preuzmiDadilje()
+    if(this.isDadilja)
+    {
+      this.dadilja$ = this.dadiljaService.preuzmiDadiljuPoEmailu(this.userEmail)
 
-    this.objavljeniOglasi$ = this.dadiljaService.preuzmiOglaseDadilje(this.email)
-    this.prijavljeniOglasi$ = this.dadiljaService.preuzmiPrijavljeneOglase(this.email)
+      this.dadilja$.subscribe(dadilja => {
+        this.dadilje = dadilja
+        console.log("Dadilja: ", this.dadilje, this.isDadilja)
+      })
+
+      this.objavljeniOglasi$ = this.dadiljaService.preuzmiOglaseDadilje(this.userEmail)
+      console.log("Objavljeni oglasi: ", this.objavljeniOglasi$)
+      this.prijavljeniOglasi$ = this.dadiljaService.preuzmiPrijavljeneOglase(this.userEmail)
+      console.log("Prijavljeni oglasi: ", this.prijavljeniOglasi$)
+    }
+    else
+    {
+      this.korisnik$ = this.dadiljaService.preuzmiKorisnikaPoEmailu(this.userEmail)
+      
+      this.korisnik$.subscribe(korisnik => {
+        this.korisnik = korisnik
+        console.log("Korisnik: ", this.korisnik)
+      })
+
+      this.objavljeniOglasi$ = this.dadiljaService.preuzmiOglaseKorisnika(this.userEmail)
+      this.prijavljeniOglasi$ = this.dadiljaService.preuzmiPrijavljeneOglaseKorisnika(this.userEmail)
+      console.log("Objavljeni oglasi: ", this.objavljeniOglasi$)
+      console.log("Prijavljeni oglasi: ", this.prijavljeniOglasi$)
+    }
+
+    // this.dadilje$ = this.dadiljaService.preuzmiDadilje()
+
   }
 
   preuzmiDadilje() {
@@ -60,7 +88,7 @@ export class DadiljaComponent {
   // }
 
   obrisiNalog() {
-    this.dadiljaService.obrisiNalog("dim@gmail.com").subscribe()
+    this.dadiljaService.obrisiNalog(this.userEmail).subscribe()
   }
 
   obrisiOglas(id: number | undefined) {

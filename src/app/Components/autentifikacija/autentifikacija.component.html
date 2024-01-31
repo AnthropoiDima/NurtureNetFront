@@ -3,18 +3,20 @@
 <!-- <ng-template #logIn> -->
 <div class="login-div">
     <h2>Log In</h2>
-    <mat-form-field>
-        <mat-label>Username</mat-label>
+    <input type="radio" name="dadilja" value="true" [(ngModel)]="dadilja"/> Dadilja
+    <input type="radio" name="dadilja" value="false" [(ngModel)]="dadilja"/> Korisnik
+    <br><br>
+    <form>
+        Username: 
         <input matInput placeholder="Unesite email" [(ngModel)]="email" name="email"/>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Password</mat-label>
+        <br><br>
+        Password: 
         <input matInput placeholder="Unesite sifru" type="password" [(ngModel)]="password" name="password"/>
-    </mat-form-field>
-    <br>
-    <button mat-raised-button (click)="Login()" routerLink="/oglasi">
-        <mat-icon>login</mat-icon> Log In
-    </button>
+        </form>
+        <br>
+        <button mat-raised-button (click)="Login()" routerLink="/oglasi">
+            <mat-icon>login</mat-icon> Log In
+        </button>
     <button style="background-color: pink;" mat-raised-button routerLink="/signup">
         <mat-icon>login</mat-icon> Sign Up
     </button>

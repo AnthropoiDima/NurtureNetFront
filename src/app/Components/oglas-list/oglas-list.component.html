@@ -3,25 +3,50 @@
         add
     </mat-icon>
     Dodaj novi oglas</button>
+<button class="dodaj-button" mat-raised-button color="primary" routerLink="/profil">
+    <mat-icon>
+        account_circle
+    </mat-icon>
+    Profil</button>
+    <button class="dodaj-button" mat-raised-button routerLink="/login"> <mat-icon>logout</mat-icon>Odjavi se</button>
 <br><br>
-<button mat-raised-button color="primary" (click)="preuzmiOglase()">Prikazi sve oglase</button>
+<button mat-raised-button color="primary" (click)="preuzmiOglase()"><mat-icon>list_all</mat-icon> Prikazi sve oglase</button>
 <br><br>
-<button mat-raised-button color="primary" (click)="preuzmiOglasePoGradu()">Pretrazi oglase po gradu</button>
+<button mat-raised-button color="primary" (click)="preuzmiOglasePoGradu()"><mat-icon>location_city</mat-icon>Pretrazi oglase po gradu</button>
 <input matInput [(ngModel)]="grad" name="grad">
 <br><br>
-<button mat-raised-button color="primary" (click)="preuzmiOglasePoVestinama()">Prikazi oglase po vestinama</button>
-<br><br>
+<button *ngIf="isDadilja" mat-raised-button color="primary" (click)="preuzmiOglasePoVestinama()"><mat-icon>volunteer_activism</mat-icon>Prikazi oglase sa odgovarajucim vestinama</button>
 <!-- <button mat-raised-button color="primary">Dodaj novi oglas</button>
 <button mat-raised-button color="primary">Dodaj novi oglas</button> -->
-<div *ngFor="let oglas of oglasi$ | async">
-    <div class="oglas-item-div">
-        <h3>{{ oglas?.opis }}</h3>
-        <h4>Plata: {{ oglas?.plata }} din.</h4>
-        <h4>Radno vreme: {{ oglas?.radnoVreme }}</h4>
-        <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
-        <div>
-            <button class="rezervisi" (click)="rezervisiOglasDadilja(email, oglas?.id)">Prijavi se</button>
-            <button class="rezervisi">Kontaktiraj oglasavaca</button>
+<div class="oglasi">
+    <div class="grupa-oglasa">
+        <h2>Oglasi Dadilja</h2>
+        <div *ngFor="let oglas of oglasiDadilja$ | async">
+            <div class="oglas-item-div">
+                <h3>{{ oglas?.opis }}</h3>
+                <h4>Plata: {{ oglas?.plata }} din.</h4>
+                <h4>Radno vreme: {{ oglas?.radnoVreme }}</h4>
+                <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
+                <div>
+                    <button *ngIf="!isDadilja" class="rezervisi" (click)="rezervisiOglas(oglas?.id)"><mat-icon>child_friendly</mat-icon> Prijavi se</button>
+                    <button class="rezervisi"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grupa-oglasa">
+        <h2>Oglasi Korisnika</h2>
+        <div *ngFor="let oglas of oglasiKorisnika$ | async">
+            <div class="oglas-item-div">
+                <h3>{{ oglas?.opis }}</h3>
+                <h4>Plata: {{ oglas?.plata }} din.</h4>
+                <h4>Radno vreme: {{ oglas?.radnoVreme }}</h4>
+                <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
+                <div>
+                    <button *ngIf="isDadilja" class="rezervisi" (click)="rezervisiOglas(oglas?.id)"><mat-icon>child_friendly</mat-icon> Prijavi se</button>
+                    <button class="rezervisi"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>

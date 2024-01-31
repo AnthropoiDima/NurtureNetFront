@@ -39,3 +39,15 @@ button {
     align-items: center;
     height: 60px;
   }
+
+  .mat-focused .mat-form-field-label {
+    color: white;
+  }
+
+  .mat-form-field-underline {
+    background-color: white !important;
+  }
+
+  .mat-form-field-ripple {
+    background-color: white !important;
+  }

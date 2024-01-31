@@ -57,7 +57,7 @@ export class OglasService {
     return this.http.get<Oglas[]>(this.url+"/PretraziDadiljePoVestinama/" + id);
   }
 
-  rezervisiOglasKorisnik(email:string, id: number)
+  rezervisiOglasKorisnik(email:string, id: number | undefined)
   {
     return this.http.put(this.clientUrl + "Korisnik/RezervisiOglas/" + email + "/" + id, {});
   }
@@ -70,5 +70,20 @@ export class OglasService {
   dodajOglasDadilja(email:string, opis: string, plata: number, radnoVreme: string, vestine: string)
   {
     return this.http.post(this.clientUrl + "Dadilja/DodajOglasDadilja/" + email + '/' + opis + '/' + plata + '/' + radnoVreme + '/' + vestine, {});
+  }
+
+  dodajOglasKorisnik(email:string, opis: string, plata: number, radnoVreme: string, vestine: string)
+  {
+    return this.http.post(this.clientUrl + "Korisnik/DodajOglasKorisnik/" + email + '/' + opis + '/' + plata + '/' + radnoVreme + '/' + vestine, {});
+  }
+
+  preuzmiSveOglaseDadilja()
+  {
+    return this.http.get<Oglas[]>(this.url+"/PreuzmiOglaseDadilja");
+  }
+
+  preuzmiSveOglaseKorisnika()
+  {
+    return this.http.get<Oglas[]>(this.url+"/PreuzmiSveOglaseKorisnika");
   }
 }

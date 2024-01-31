@@ -6,11 +6,11 @@ body {
     margin-bottom: 20px;
 }
 
-h3, h4, h5 {
+h2, h3, h4, h5 {
     margin: 0;
     padding-bottom: 5px;
     padding-top: 5px;
-    color: rgb(68, 3, 16);
+    color: black;
     /* text-shadow: black 1px 1px 10px; */
 }
 
@@ -31,7 +31,7 @@ h3, h4, h5 {
 }
 
 .oglas-item-div {
-    margin-left: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -83,4 +83,14 @@ button {
 
 input {
     margin-left: 10px;
+}
+
+.oglasi {
+    display: flex;
+    flex-direction: row;
+}
+
+.grupa-oglasa
+{
+    margin: 20px;
 }

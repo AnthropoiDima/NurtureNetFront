@@ -1,65 +1,64 @@
 <div class="signup-div">
     <h2>Sign Up</h2>
-    <div>
-        Da li se prijavljujete kao dadilja ili korisnik?
-        <br>
+    <form>
+        Da li se prijavljujete kao dadilja ili korisnik?<br>
         <input type="radio" name="dadilja" value="true" [(ngModel)]="dadilja"/> Dadilja
         <input type="radio" name="dadilja" value="false" [(ngModel)]="dadilja"/> Korisnik
-        <br><br>
-        <mat-form-field>
+        <br>
+        <!-- <mat-form-field class="formfield"> -->
             <mat-label>Email</mat-label>
             <input matInput placeholder="Email" [(ngModel)]="email" name="email"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Sifra</mat-label>
             <input matInput placeholder="Sifra" type="password" [(ngModel)]="password" name="password"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Ime</mat-label>
             <input matInput placeholder="Ime" [(ngModel)]="ime" name="ime"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Prezime</mat-label>
             <input matInput placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Drzava</mat-label>
             <input matInput placeholder="Drzava" [(ngModel)]="drzava" name="drzava"/>
-        </mat-form-field>
-    </div>
-    <div>
+        <!-- </mat-form-field> -->
+    </form>
+    <form>
 
-        <mat-form-field>
-            <mat-label>Grad</mat-label>
+        <!-- <mat-form-field> -->
+            <mat-label>Grad</mat-label> <br>
             <input matInput placeholder="Grad" [(ngModel)]="grad" name="grad"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Broj telefona</mat-label>
             <input matInput placeholder="Broj Telefona" [(ngModel)]="brojTelefona" name="brojTelefona"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Datum rodjenja</mat-label>
             <input matInput type="date" placeholder="Datum Rodjenja" [(ngModel)]="datumRodjenja" name="datumRodjenja"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
-            <mat-label>Pol</mat-label>
-            <input matInput placeholder="Pol (M/Z)" [(ngModel)]="pol" name="pol"/>
-        </mat-form-field>
+        <!-- <mat-form-field> -->
+            <mat-label>Pol</mat-label> <br>
+            <input style="width: 150px;" matInput placeholder="Pol (M/Z)" [(ngModel)]="pol" name="pol"/>
+        <!-- </mat-form-field> -->
         <br><br>
-        <mat-form-field>
+        <!-- <mat-form-field> -->
             <mat-label>Vestine</mat-label>
             <input matInput placeholder="Vestine (za dadilje)" [(ngModel)]="vestine" name="vestine"/>
-        </mat-form-field>
+        <!-- </mat-form-field> -->
         <button mat-raised-button style="background-color: pink;" (click)="SignUp()" routerLink="/oglasi">
             <mat-icon>login</mat-icon> Sign Up</button>
         <button mat-raised-button routerLink="/login">
             <mat-icon>login</mat-icon>Log In</button>
-    </div>
+        </form>
 </div>
