@@ -13,18 +13,18 @@ export class AppComponent {
   title = 'NurtureNet';
 
   ngOnInit(): void {
-    this.signalRService.startConnection();
-    this.signalRService.addMessageListener();   
-    this.startHttpRequest();
+    // this.signalRService.startConnection();
+    // this.signalRService.addMessageListener();   
+    // this.startHttpRequest();
   }
 
-  private startHttpRequest = () => {
-    this.http.post('http://localhost:5201/Poruka/PosaljiPoruku/' + 'ema@gmail.com', {
-      sadrzaj: "cao",
-      timeStamp: "2024-01-31T00:31:55.119Z"
-    })
-      .subscribe(res => {
-        console.log(res);
-      })
-  }
+  // private startHttpRequest = () => {
+  //   this.http.post('http://localhost:5201/Poruka/PosaljiPoruku/' + 'ema@gmail.com', {
+  //     sadrzaj: "cao",
+  //     timeStamp: "2024-01-31T00:31:55.119Z"
+  //   })
+  //     .subscribe(res => {
+  //       console.log(res);
+  //     })
+  // }
 }

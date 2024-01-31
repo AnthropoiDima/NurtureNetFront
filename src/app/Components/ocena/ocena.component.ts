@@ -9,7 +9,7 @@ import { OcenaService } from 'src/app/Services/ocena.service';
 })
 export class OcenaComponent {
   @Input() dadilja: boolean = false
-  @Input() emailDadilje: string = "marko1@gmail.com"
+  @Input() emailDadilje: string = "marko1@gmail.com"  
   @Input() emailKorisnika: string = "zokib@gmail.com"
   @Input() id: number | undefined = -1
   ocena: Ocena = { id: -1, vrednost: 0, komentar: "" }

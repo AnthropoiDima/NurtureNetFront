@@ -33,7 +33,7 @@
                 <h4>Radno vreme: {{ oglas.radnoVreme }}</h4>
                 <h4>Pozeljne vestine: {{ oglas.vestine }}</h4>
                 <div class="dugmici">
-                    <button class="rezervisi" [routerLink]="['/chat', this.email, oglas.id]">Kontaktiraj oglasavaca</button>
+                    <button class="rezervisi" routerLink="/chat">Kontaktiraj oglasavaca</button>
                     <app-ocena [id]="oglas.id" [emailDadilje]="email"></app-ocena>
                 </div>
             </div>
