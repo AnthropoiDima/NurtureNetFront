@@ -1,0 +1,14 @@
+<form class="forma">
+        <h3>
+            Ocena
+        </h3>
+        <input matInput type="number" [(ngModel)]="vrednost" name="vrednost" style="width: 30px;">
+        <h3>
+            Komentar
+        </h3>
+        <input matInput [(ngModel)]="komentar" name="komentar" style="width: 200px;">
+    <br>
+    <button type="button" mat-raised-button routerLink="/profil" (click)="oceni()" style="background-color: greenyellow; margin: 10px; width: 100px;"><mat-icon>star</mat-icon>Oceni</button>
+    <br><br>
+    <!-- <button type="button" mat-raised-button routerLink="/profil" >Nazad na profil</button> -->
+</form>

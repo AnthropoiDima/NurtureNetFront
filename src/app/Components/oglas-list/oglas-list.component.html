@@ -1,0 +1,27 @@
+<button class="dodaj-button" mat-raised-button color="primary" routerLink="/oglas">
+    <mat-icon>
+        add
+    </mat-icon>
+    Dodaj novi oglas</button>
+<br><br>
+<button mat-raised-button color="primary" (click)="preuzmiOglase()">Prikazi sve oglase</button>
+<br><br>
+<button mat-raised-button color="primary" (click)="preuzmiOglasePoGradu()">Pretrazi oglase po gradu</button>
+<input matInput [(ngModel)]="grad" name="grad">
+<br><br>
+<button mat-raised-button color="primary" (click)="preuzmiOglasePoVestinama()">Prikazi oglase po vestinama</button>
+<br><br>
+<!-- <button mat-raised-button color="primary">Dodaj novi oglas</button>
+<button mat-raised-button color="primary">Dodaj novi oglas</button> -->
+<div *ngFor="let oglas of oglasi$ | async">
+    <div class="oglas-item-div">
+        <h3>{{ oglas?.opis }}</h3>
+        <h4>Plata: {{ oglas?.plata }} din.</h4>
+        <h4>Radno vreme: {{ oglas?.radnoVreme }}</h4>
+        <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
+        <div>
+            <button class="rezervisi" (click)="rezervisiOglasDadilja(email, oglas?.id)">Prijavi se</button>
+            <button class="rezervisi">Kontaktiraj oglasavaca</button>
+        </div>
+    </div>
+</div>

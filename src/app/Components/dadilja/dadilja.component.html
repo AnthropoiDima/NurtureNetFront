@@ -1,0 +1,43 @@
+<div class="account-div">
+    <div class="account-info-div" *ngFor="let dadilja of dadilja$ | async">
+        <h2>{{ dadilja?.ime }} {{dadilja?.prezime}}</h2>
+        <h3>Email: {{ dadilja?.email }}</h3>
+        <h3>Drzava: {{ dadilja?.drzava }}</h3>
+        <h3>Grad: {{ dadilja?.grad }}</h3>
+        <h3>Pol: {{ dadilja?.pol }}</h3>
+        <h3>Datum rodjenja: {{ dadilja?.datumRodjenja }}</h3>
+        <h3>Telefon: {{ dadilja?.brojTelefona }}</h3>
+        <h3>Vestine: {{ dadilja?.vestine }}</h3>
+        <div class="dugmad">
+            <button mat-raised-button routerLink="/izmeni-profil" style="width: 150px;"> <mat-icon>edit</mat-icon>Izmeni lozinku</button>
+            <button mat-raised-button routerLink="/oglasi" style="margin-top: 10px; width: 150px;"> <mat-icon>arrow_back</mat-icon>Nazad na oglase</button>
+        </div>
+        <br><br>
+    </div>
+    <div class="oglasi">
+        <h2>Objavljeni oglasi</h2>
+        <div class="oglas" *ngFor="let oglas of objavljeniOglasi$ | async">
+            <div class="oglas-item-div">
+                <h3>{{ oglas?.opis }}</h3>
+                <h4>Plata: {{ oglas?.plata }} din.</h4>
+                <h4>Radno vreme: {{ oglas?.radnoVreme }}</h4>
+                <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
+                <button class="rezervisi" style="margin-bottom: 10px;" mat-raised-button (click)="obrisiOglas(oglas?.id)"><mat-icon>delete</mat-icon>Obrisi oglas</button>
+            </div>
+        </div>
+        <h2>Rezervisani oglasi</h2>
+        <div class="oglas" *ngFor="let oglas of prijavljeniOglasi$ | async">
+            <div class="oglas-item-div">
+                <h3>{{ oglas.opis }}</h3>
+                <h4>Plata: {{ oglas.plata }} din.</h4>
+                <h4>Radno vreme: {{ oglas.radnoVreme }}</h4>
+                <h4>Pozeljne vestine: {{ oglas.vestine }}</h4>
+                <div class="dugmici">
+                    <button class="rezervisi" [routerLink]="['/chat', this.email, oglas.id]">Kontaktiraj oglasavaca</button>
+                    <app-ocena [id]="oglas.id" [emailDadilje]="email"></app-ocena>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button routerLink="/login" style="height: 40px; margin-top: 20px; margin-left: 100px;" (click)="obrisiNalog()"> <mat-icon>delete</mat-icon>Obrisi nalog</button>
+</div>

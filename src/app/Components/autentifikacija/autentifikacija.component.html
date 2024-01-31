@@ -1,0 +1,26 @@
+<!-- <ng-component *ngIf="!userLoggedIn;then logIn; else loggedIn">
+</ng-component> -->
+<!-- <ng-template #logIn> -->
+<div class="login-div">
+    <h2>Log In</h2>
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Unesite email" [(ngModel)]="email" name="email"/>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Unesite sifru" type="password" [(ngModel)]="password" name="password"/>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button (click)="Login()" routerLink="/oglasi">
+        <mat-icon>login</mat-icon> Log In
+    </button>
+    <button style="background-color: pink;" mat-raised-button routerLink="/signup">
+        <mat-icon>login</mat-icon> Sign Up
+    </button>
+</div>
+<!-- </ng-template> -->
+
+<!-- <ng-template #loggedIn>
+    <app-menu-bar *ngIf="user && user.id !== -1" (logoutEvent)="handleLogout()"></app-menu-bar>
+</ng-template> -->

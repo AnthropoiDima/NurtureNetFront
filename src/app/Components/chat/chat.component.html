@@ -1,0 +1,7 @@
+<div class="chat">
+    <div>
+        <input [(ngModel)]="emailSagovornika" placeholder="emailSagovornika" />
+        <input [(ngModel)]="poruka" placeholder="poruka" />
+        <button (click)="sendMessage(emailSagovornika, poruka)">Send Message</button>
+    </div>    
+</div>

@@ -1,0 +1,87 @@
+button {
+    background-color: rgb(241, 134, 152);
+}
+
+.account-div {
+    background-color: rgb(247, 230, 232);
+    display: flex;
+    flex-direction: row;
+}
+
+.account-info-div {
+    padding: 20px;
+    margin: 20px;
+    height: fit-content;
+    border: 2px solid pink;
+}
+
+.current-journey-div {
+    margin: 20px;
+    margin-left: 50px;
+    width: fit-content;
+    align-items: center;
+}
+
+.mat-warn {
+    margin-top: 10px;
+}
+
+.books-list-div {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: fit-content;
+}
+
+.completed-journeys-div {
+    margin: 20px;
+}
+
+.oglasi {
+    display: flex;
+    flex-direction: column;
+}
+
+.oglas {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 20px;
+}
+
+
+.oglas-item-div {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 350px;
+    height: fit-content;
+    position: relative;
+    border: 2px solid pink;
+    padding-left: 10px;
+}
+
+.oglas-item-div:hover {
+    background-color: rgba(224, 255, 121, 0.6);
+}
+
+.rezervisi {
+    margin-left: 10px;
+    height: 35px;
+    width: fit-content;
+    background-color: greenyellow;
+}
+
+.dugmici {
+    display: flex;
+    flex-direction: column;
+}
+
+.dugmad {
+    display: flex;
+    flex-direction: column;
+}

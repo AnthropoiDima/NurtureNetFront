@@ -1,0 +1,23 @@
+<form class="forma">
+    <!-- pronadjiDadilju([email]) -->
+    <br> <button mat-raised-button routerLink="/profil" class="back-button">
+        <mat-icon>
+        arrow_back
+        </mat-icon>Nazad na profil</button><br><br>
+    <!-- <mat-form-field>
+        <mat-label>Ime</mat-label>
+        <input matInput id="ime" type="text" [(ngModel)]="ime" name="ime">
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Drzava</mat-label>
+        <input matInput id="drzava" type="text" [(ngModel)]="drzava" name="drzava">
+    </mat-form-field><br> -->
+    <mat-form-field>
+        <mat-label>Lozinka</mat-label>
+        Lozinka
+        <input matInput ="lozinka" type="password" [(ngModel)]="lozinka" name="lozinka">
+    </mat-form-field>
+    <br>
+    <br>
+    <button type="button" mat-raised-button color="primary" routerLink="/profil" (click)="izmeniLozinku()">Izmeni podatke</button>
+</form>
