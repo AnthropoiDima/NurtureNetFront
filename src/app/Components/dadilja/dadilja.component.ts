@@ -94,4 +94,9 @@ export class DadiljaComponent {
   obrisiOglas(id: number | undefined) {
     this.dadiljaService.obrisiOglas(id).subscribe()
   }
+
+  otvoriChat(sagovornik: string) {
+    environment.sagovornik = sagovornik
+    console.log("Sagovornik: ", environment.sagovornik)
+  }
 }

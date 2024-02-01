@@ -5,6 +5,7 @@ body {
     font-family: 'Arial';
     height: 100vh;
     margin: 0;
+    background-color: rgb(247, 230, 232);
 }
 
 .login-div {

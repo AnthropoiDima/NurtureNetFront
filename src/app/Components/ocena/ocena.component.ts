@@ -17,6 +17,7 @@ export class OcenaComponent {
   vrednost: number = 0
   komentar: string = ""
   
+  
   constructor(private service: OcenaService) { }
 
   ngOnInit(): void {

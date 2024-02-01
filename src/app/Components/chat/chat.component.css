@@ -1,4 +1,50 @@
 .chat {
     margin: 10px;
     border: 2px solid pink;
+    background-color: rgb(247, 230, 232);
+}
+
+.poruka {
+    padding-left: 10px;
+    margin: 10px;
+    border: 2px solid green;
+    background-color: rgba(172, 255, 47, 0.312);
+}
+
+.nova-poruka {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid green;
+    background-color: rgba(172, 255, 47, 0.081);
+    width: 553px;
+}
+
+.posalji-dugme {
+    align-items: right;
+    align-self: right;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    height: 35px;
+    width: fit-content;
+    background-color: greenyellow;
+}
+
+.logout-dugme {
+    margin: 10px;
+    height: 35px;
+    width: fit-content;
+    background-color: rgb(241, 134, 152);
+}
+
+.ime {
+    margin: 10px;
+    padding: 10px;
+    /* border: 2px solid pink; */
+    width: fit-content;
+    background-color: rgb(247, 230, 232);
+}
+
+.posalji {
+    display: flex;
+    flex-direction: column;
 }

@@ -10,7 +10,7 @@
     Profil</button>
     <button class="dodaj-button" mat-raised-button routerLink="/login"> <mat-icon>logout</mat-icon>Odjavi se</button>
 <br><br>
-<button mat-raised-button color="primary" (click)="preuzmiOglase()"><mat-icon>list_all</mat-icon> Prikazi sve oglase</button>
+<button mat-raised-button color="primary" (click)="preuzmiOglase()"><mat-icon>newspaper</mat-icon> Prikazi sve oglase</button>
 <br><br>
 <button mat-raised-button color="primary" (click)="preuzmiOglasePoGradu()"><mat-icon>location_city</mat-icon>Pretrazi oglase po gradu</button>
 <input matInput [(ngModel)]="grad" name="grad">
@@ -29,7 +29,7 @@
                 <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
                 <div>
                     <button *ngIf="!isDadilja" class="rezervisi" (click)="rezervisiOglas(oglas?.id)"><mat-icon>child_friendly</mat-icon> Prijavi se</button>
-                    <button class="rezervisi"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
+                    <button class="rezervisi" (click)="otvoriChat(oglas.oglasivac)" routerLink="/chat"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
                 </div>
             </div>
         </div>
@@ -44,7 +44,7 @@
                 <h4>Pozeljne vestine: {{ oglas?.vestine }}</h4>
                 <div>
                     <button *ngIf="isDadilja" class="rezervisi" (click)="rezervisiOglas(oglas?.id)"><mat-icon>child_friendly</mat-icon> Prijavi se</button>
-                    <button class="rezervisi"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
+                    <button class="rezervisi" (click)="otvoriChat(oglas.oglasivac)" routerLink="/chat" ><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
                 </div>
             </div>
         </div>

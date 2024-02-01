@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
+import { Observable } from 'rxjs';
+import { Poruka } from '../Models/poruka';
 
 @Injectable({
   providedIn: 'root'
@@ -40,5 +42,9 @@ export class SignalrService {
       sadrzaj: message,
       timeStamp: new Date()
     })
+  }
+
+  preuzmiPoruke(emailSender: string, emailReceiver: string) {
+    return this.http.get<Poruka[]>(this.url + "Poruka/PreuzmiPoruke/" + emailSender + '/' + emailReceiver);
   }
 }

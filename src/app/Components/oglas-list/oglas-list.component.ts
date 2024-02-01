@@ -43,14 +43,12 @@ export class OglasListComponent {
   }
 
   preuzmiOglasePoGradu() {
-    if(this.isDadilja)
-      this.oglasi$ = this.service.preuzmiOglasePoGraduKorisnika(this.grad)
-    else
-      this.oglasi$ = this.service.preuzmiOglasePoGraduDadilje(this.grad)
+    this.oglasiDadilja$ = this.service.preuzmiOglasePoGraduDadilje(this.grad)
+    this.oglasiKorisnika$ = this.service.preuzmiOglasePoGraduKorisnika(this.grad)
   }
 
   preuzmiOglasePoVestinama() {
-    this.oglasi$ = this.service.pretraziOglasePoVestinama(this.userEmail)
+    this.oglasiKorisnika$ = this.service.pretraziOglasePoVestinama(this.userEmail)
   }
 
   rezervisiOglas(id: number | undefined)
@@ -59,5 +57,11 @@ export class OglasListComponent {
       this.service.rezervisiOglasDadilja(this.userEmail, id).subscribe()
     else
       this.service.rezervisiOglasKorisnik(this.userEmail, id).subscribe()
+  }
+
+  otvoriChat(sagovornik: string)
+  {
+    environment.sagovornik = sagovornik
+    console.log("Sagovornik: ", environment.sagovornik)
   }
 }

@@ -53,7 +53,7 @@
                     <h4>Pozeljne vestine: {{ oglas.vestine }}</h4>
                     <h4>Oglasavac: {{ oglas.oglasivac }}</h4>
                     <div class="dugmici">
-                        <button class="rezervisi" routerLink="/chat"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
+                        <button class="rezervisi" (click)="otvoriChat(oglas.oglasivac)" routerLink="/chat"><mat-icon>chat</mat-icon> Kontaktiraj oglasavaca</button>
                         <app-ocena [id]="oglas.id" [emailKorisnika]="oglas.oglasivac"></app-ocena>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
         </ng-container>
     </div>
     <div style="display: flex; flex-direction: column;">
-        <button mat-raised-button routerLink="/oglasi" style="height: 60px; margin-top: 20px; margin-left: 100px;"> <mat-icon>arrow_back</mat-icon>Nazad na oglase</button>
+        <button mat-raised-button routerLink="/oglasi" style="height: 60px; margin-top: 20px; margin-left: 100px;"> <mat-icon>newspaper</mat-icon>Nazad na oglase</button>
         <button mat-raised-button routerLink="/login" style="height: 40px; margin-top: 20px; margin-left: 100px;"> <mat-icon>logout</mat-icon>Odjavi se</button>
         <button mat-raised-button routerLink="/login" style="height: 40px; margin-top: 20px; margin-left: 100px;" (click)="obrisiNalog()"> <mat-icon>delete</mat-icon>Obrisi nalog</button>
     </div>
