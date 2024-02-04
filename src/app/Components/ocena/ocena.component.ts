@@ -28,8 +28,8 @@ export class OcenaComponent {
 
   oceni() {
     if(!this.isDadilja)
-      this.service.oceniKorisnika(this.userEmail, this.emailKorisnika, this.vrednost, this.komentar).subscribe()
+      this.service.oceniDadilju(this.userEmail, this.emailKorisnika, this.vrednost, this.komentar).subscribe()
     else
-      this.service.oceniDadilju(this.emailKorisnika, this.userEmail, this.vrednost, this.komentar).subscribe()
+      this.service.oceniKorisnika(this.emailKorisnika, this.userEmail, this.vrednost, this.komentar).subscribe()
   }
 }
