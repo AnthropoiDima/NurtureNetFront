@@ -5,28 +5,34 @@
         <input type="radio" name="dadilja" value="true" [(ngModel)]="dadilja"/> Dadilja
         <input type="radio" name="dadilja" value="false" [(ngModel)]="dadilja"/> Korisnik
         <br>
+        <br>
         <!-- <mat-form-field class="formfield"> -->
             <mat-label>Email</mat-label>
+            <br>
             <input matInput placeholder="Email" [(ngModel)]="email" name="email"/>
         <!-- </mat-form-field> -->
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Sifra</mat-label>
+            <br>
             <input matInput placeholder="Sifra" type="password" [(ngModel)]="password" name="password"/>
         <!-- </mat-form-field> -->
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Ime</mat-label>
+            <br>
             <input matInput placeholder="Ime" [(ngModel)]="ime" name="ime"/>
         <!-- </mat-form-field> -->
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Prezime</mat-label>
+            <br>
             <input matInput placeholder="Prezime" [(ngModel)]="prezime" name="prezime"/>
         <!-- </mat-form-field> -->
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Drzava</mat-label>
+            <br>
             <input matInput placeholder="Drzava" [(ngModel)]="drzava" name="drzava"/>
         <!-- </mat-form-field> -->
     </form>
@@ -39,11 +45,13 @@
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Broj telefona</mat-label>
+            <br>
             <input matInput placeholder="Broj Telefona" [(ngModel)]="brojTelefona" name="brojTelefona"/>
         <!-- </mat-form-field> -->
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Datum rodjenja</mat-label>
+            <br>
             <input matInput type="date" placeholder="Datum Rodjenja" [(ngModel)]="datumRodjenja" name="datumRodjenja"/>
         <!-- </mat-form-field> -->
         <br><br>
@@ -54,8 +62,10 @@
         <br><br>
         <!-- <mat-form-field> -->
             <mat-label>Vestine</mat-label>
+            <br>
             <input matInput placeholder="Vestine (za dadilje)" [(ngModel)]="vestine" name="vestine"/>
         <!-- </mat-form-field> -->
+        <br>
         <button mat-raised-button style="background-color: pink;" (click)="SignUp()" routerLink="/oglasi">
             <mat-icon>login</mat-icon> Sign Up</button>
         <button mat-raised-button routerLink="/login">
